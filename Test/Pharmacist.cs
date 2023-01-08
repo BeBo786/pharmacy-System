@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Patagames.Ocr;
 namespace Test
 {
     public partial class Pharmacist : Form
@@ -40,6 +40,7 @@ namespace Test
             uC_P_viewMedicine1.Visible = false;
             uC_P_UpdateMedicine1.Visible = false;
             uC_P_SellMed1.Visible = false;
+            uC_p_OCR1.Visible = false;
         }
 
         private void btnAddMed_Click(object sender, EventArgs e)
@@ -80,6 +81,12 @@ namespace Test
         private void usernamelbl_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ocrbtn_Click(object sender, EventArgs e)
+        {
+            uC_p_OCR1.Visible = true;
+            uC_p_OCR1.BringToFront();
         }
     }
 }

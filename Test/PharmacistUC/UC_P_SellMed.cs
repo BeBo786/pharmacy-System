@@ -186,6 +186,11 @@ namespace Test.PharmacistUC
             }
         }
 
+        private void txtmedName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void BtnPurches_Click(object sender, EventArgs e)
         {
             DGVPrinter print = new  DGVPrinter();

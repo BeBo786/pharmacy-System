@@ -46,10 +46,14 @@
             this.txtPass = new Guna.UI.WinForms.GunaTextBox();
             this.txtDOB = new Guna.UI.WinForms.GunaDateTimePicker();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSignin = new Guna.UI2.WinForms.Guna2Button();
-            this.btnReset = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
+            this.btnReset = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSignin = new Guna.UI2.WinForms.Guna2Button();
+            this.Phone_Valid = new System.Windows.Forms.Label();
+            this.Name_Valid = new System.Windows.Forms.Label();
+            this.pass_Valid = new System.Windows.Forms.Label();
+            this.email_Valid = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -188,6 +192,7 @@
             this.txtPhoneNo.SelectedText = "";
             this.txtPhoneNo.Size = new System.Drawing.Size(340, 36);
             this.txtPhoneNo.TabIndex = 10;
+            this.txtPhoneNo.TextChanged += new System.EventHandler(this.txtPhoneNo_TextChanged);
             // 
             // txtEmail
             // 
@@ -270,54 +275,6 @@
             this.panel2.Size = new System.Drawing.Size(4, 500);
             this.panel2.TabIndex = 15;
             // 
-            // btnSignin
-            // 
-            this.btnSignin.BorderRadius = 18;
-            this.btnSignin.BorderThickness = 1;
-            this.btnSignin.CheckedState.Parent = this.btnSignin;
-            this.btnSignin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSignin.CustomImages.Parent = this.btnSignin;
-            this.btnSignin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.btnSignin.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignin.ForeColor = System.Drawing.Color.White;
-            this.btnSignin.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.btnSignin.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnSignin.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.btnSignin.HoverState.Parent = this.btnSignin;
-            this.btnSignin.Image = ((System.Drawing.Image)(resources.GetObject("btnSignin.Image")));
-            this.btnSignin.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSignin.Location = new System.Drawing.Point(576, 692);
-            this.btnSignin.Name = "btnSignin";
-            this.btnSignin.ShadowDecoration.Parent = this.btnSignin;
-            this.btnSignin.Size = new System.Drawing.Size(180, 45);
-            this.btnSignin.TabIndex = 16;
-            this.btnSignin.Text = "Sign Up";
-            this.btnSignin.Click += new System.EventHandler(this.btnSignin_Click);
-            // 
-            // btnReset
-            // 
-            this.btnReset.BorderRadius = 18;
-            this.btnReset.BorderThickness = 1;
-            this.btnReset.CheckedState.Parent = this.btnReset;
-            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReset.CustomImages.Parent = this.btnReset;
-            this.btnReset.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.btnReset.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnReset.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.btnReset.HoverState.Parent = this.btnReset;
-            this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
-            this.btnReset.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnReset.Location = new System.Drawing.Point(807, 692);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.ShadowDecoration.Parent = this.btnReset;
-            this.btnReset.Size = new System.Drawing.Size(180, 45);
-            this.btnReset.TabIndex = 17;
-            this.btnReset.Text = "Reset";
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.TargetControl = this;
@@ -344,11 +301,96 @@
             this.btnExit.TabIndex = 18;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnReset
+            // 
+            this.btnReset.BorderRadius = 18;
+            this.btnReset.BorderThickness = 1;
+            this.btnReset.CheckedState.Parent = this.btnReset;
+            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReset.CustomImages.Parent = this.btnReset;
+            this.btnReset.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnReset.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnReset.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btnReset.HoverState.Parent = this.btnReset;
+            this.btnReset.Image = global::Test.Properties.Resources.reset_25px;
+            this.btnReset.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnReset.Location = new System.Drawing.Point(807, 692);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.ShadowDecoration.Parent = this.btnReset;
+            this.btnReset.Size = new System.Drawing.Size(180, 45);
+            this.btnReset.TabIndex = 17;
+            this.btnReset.Text = "Reset";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnSignin
+            // 
+            this.btnSignin.BorderRadius = 18;
+            this.btnSignin.BorderThickness = 1;
+            this.btnSignin.CheckedState.Parent = this.btnSignin;
+            this.btnSignin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSignin.CustomImages.Parent = this.btnSignin;
+            this.btnSignin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btnSignin.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignin.ForeColor = System.Drawing.Color.White;
+            this.btnSignin.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnSignin.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnSignin.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btnSignin.HoverState.Parent = this.btnSignin;
+            this.btnSignin.Image = global::Test.Properties.Resources.signup_64px;
+            this.btnSignin.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnSignin.Location = new System.Drawing.Point(576, 692);
+            this.btnSignin.Name = "btnSignin";
+            this.btnSignin.ShadowDecoration.Parent = this.btnSignin;
+            this.btnSignin.Size = new System.Drawing.Size(180, 45);
+            this.btnSignin.TabIndex = 16;
+            this.btnSignin.Text = "Sign Up";
+            this.btnSignin.Click += new System.EventHandler(this.btnSignin_Click);
+            // 
+            // Phone_Valid
+            // 
+            this.Phone_Valid.AutoSize = true;
+            this.Phone_Valid.Location = new System.Drawing.Point(217, 576);
+            this.Phone_Valid.Name = "Phone_Valid";
+            this.Phone_Valid.Size = new System.Drawing.Size(0, 13);
+            this.Phone_Valid.TabIndex = 19;
+            // 
+            // Name_Valid
+            // 
+            this.Name_Valid.AutoSize = true;
+            this.Name_Valid.Location = new System.Drawing.Point(192, 362);
+            this.Name_Valid.Name = "Name_Valid";
+            this.Name_Valid.Size = new System.Drawing.Size(0, 13);
+            this.Name_Valid.TabIndex = 20;
+            this.Name_Valid.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // pass_Valid
+            // 
+            this.pass_Valid.AutoSize = true;
+            this.pass_Valid.Location = new System.Drawing.Point(750, 471);
+            this.pass_Valid.Name = "pass_Valid";
+            this.pass_Valid.Size = new System.Drawing.Size(0, 13);
+            this.pass_Valid.TabIndex = 21;
+            // 
+            // email_Valid
+            // 
+            this.email_Valid.AutoSize = true;
+            this.email_Valid.Location = new System.Drawing.Point(770, 256);
+            this.email_Valid.Name = "email_Valid";
+            this.email_Valid.Size = new System.Drawing.Size(0, 13);
+            this.email_Valid.TabIndex = 22;
+            // 
             // Uc_Adduser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.email_Valid);
+            this.Controls.Add(this.pass_Valid);
+            this.Controls.Add(this.Name_Valid);
+            this.Controls.Add(this.Phone_Valid);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSignin);
@@ -397,5 +439,9 @@
         private Guna.UI2.WinForms.Guna2Button btnReset;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Button btnExit;
+        private System.Windows.Forms.Label pass_Valid;
+        private System.Windows.Forms.Label Name_Valid;
+        private System.Windows.Forms.Label Phone_Valid;
+        private System.Windows.Forms.Label email_Valid;
     }
 }

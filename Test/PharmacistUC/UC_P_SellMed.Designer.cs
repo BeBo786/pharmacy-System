@@ -29,13 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_P_SellMed));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Dashbord = new System.Windows.Forms.Label();
-            this.BtnSync = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.listBoxMed = new System.Windows.Forms.ListBox();
@@ -63,8 +60,10 @@
             this.BtnPurches = new Guna.UI2.WinForms.Guna2Button();
             this.Totallbl = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.BtnSync = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Dashbord
@@ -76,36 +75,6 @@
             this.Dashbord.Size = new System.Drawing.Size(206, 36);
             this.Dashbord.TabIndex = 4;
             this.Dashbord.Text = "Sell Medicine";
-            // 
-            // BtnSync
-            // 
-            this.BtnSync.CheckedState.Parent = this.BtnSync;
-            this.BtnSync.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnSync.CustomImages.Parent = this.BtnSync;
-            this.BtnSync.FillColor = System.Drawing.Color.White;
-            this.BtnSync.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.BtnSync.ForeColor = System.Drawing.Color.White;
-            this.BtnSync.HoverState.FillColor = System.Drawing.Color.White;
-            this.BtnSync.HoverState.Parent = this.BtnSync;
-            this.BtnSync.Image = ((System.Drawing.Image)(resources.GetObject("BtnSync.Image")));
-            this.BtnSync.ImageSize = new System.Drawing.Size(35, 35);
-            this.BtnSync.Location = new System.Drawing.Point(252, 32);
-            this.BtnSync.Name = "BtnSync";
-            this.BtnSync.PressedColor = System.Drawing.Color.White;
-            this.BtnSync.ShadowDecoration.Parent = this.BtnSync;
-            this.BtnSync.Size = new System.Drawing.Size(34, 35);
-            this.BtnSync.TabIndex = 9;
-            this.BtnSync.Click += new System.EventHandler(this.BtnSync_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(235, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(66, 66);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -217,6 +186,7 @@
             this.txtmedName.ShadowDecoration.Parent = this.txtmedName;
             this.txtmedName.Size = new System.Drawing.Size(340, 36);
             this.txtmedName.TabIndex = 16;
+            this.txtmedName.TextChanged += new System.EventHandler(this.txtmedName_TextChanged);
             // 
             // label2
             // 
@@ -536,6 +506,36 @@
             // 
             this.guna2Elipse1.TargetControl = this;
             // 
+            // BtnSync
+            // 
+            this.BtnSync.CheckedState.Parent = this.BtnSync;
+            this.BtnSync.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSync.CustomImages.Parent = this.BtnSync;
+            this.BtnSync.FillColor = System.Drawing.Color.White;
+            this.BtnSync.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BtnSync.ForeColor = System.Drawing.Color.White;
+            this.BtnSync.HoverState.FillColor = System.Drawing.Color.White;
+            this.BtnSync.HoverState.Parent = this.BtnSync;
+            this.BtnSync.Image = global::Test.Properties.Resources.sync_64px;
+            this.BtnSync.ImageSize = new System.Drawing.Size(35, 35);
+            this.BtnSync.Location = new System.Drawing.Point(252, 32);
+            this.BtnSync.Name = "BtnSync";
+            this.BtnSync.PressedColor = System.Drawing.Color.White;
+            this.BtnSync.ShadowDecoration.Parent = this.BtnSync;
+            this.BtnSync.Size = new System.Drawing.Size(34, 35);
+            this.BtnSync.TabIndex = 9;
+            this.BtnSync.Click += new System.EventHandler(this.BtnSync_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Test.Properties.Resources.sync;
+            this.pictureBox1.Location = new System.Drawing.Point(235, 17);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(66, 66);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // UC_P_SellMed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -567,8 +567,8 @@
             this.Name = "UC_P_SellMed";
             this.Size = new System.Drawing.Size(1110, 777);
             this.Load += new System.EventHandler(this.UC_P_SellMed_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

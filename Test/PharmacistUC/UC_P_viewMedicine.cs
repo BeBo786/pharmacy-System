@@ -65,5 +65,10 @@ namespace Test.PharmacistUC
         {
             UC_P_viewMedicine_Load(this, null);
         }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

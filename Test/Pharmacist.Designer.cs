@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pharmacist));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ocrbtn = new Guna.UI2.WinForms.Guna2Button();
             this.btnSellMed = new Guna.UI2.WinForms.Guna2Button();
             this.usernamelbl = new System.Windows.Forms.Label();
             this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
@@ -42,16 +42,18 @@
             this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.btnlogout = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.uC_p_OCR1 = new Test.PharmacistUC.UC_p_OCR();
             this.uC_P_SellMed1 = new Test.PharmacistUC.UC_P_SellMed();
             this.uC_P_UpdateMedicine1 = new Test.PharmacistUC.UC_P_UpdateMedicine();
             this.uC_P_viewMedicine1 = new Test.PharmacistUC.UC_P_viewMedicine();
             this.uC_p_AddMed1 = new Test.PharmacistUC.UC_p_AddMed();
             this.uc_p_Dashbord1 = new Test.PharmacistUC.Uc_p_Dashbord();
+            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -60,6 +62,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.panel1.Controls.Add(this.ocrbtn);
             this.panel1.Controls.Add(this.btnSellMed);
             this.panel1.Controls.Add(this.usernamelbl);
             this.panel1.Controls.Add(this.btnProfile);
@@ -76,6 +79,26 @@
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // ocrbtn
+            // 
+            this.ocrbtn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.ocrbtn.CheckedState.Parent = this.ocrbtn;
+            this.ocrbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ocrbtn.CustomImages.Parent = this.ocrbtn;
+            this.ocrbtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.ocrbtn.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.ocrbtn.ForeColor = System.Drawing.Color.White;
+            this.ocrbtn.HoverState.Parent = this.ocrbtn;
+            this.ocrbtn.Image = global::Test.Properties.Resources.ocr_clipart_2;
+            this.ocrbtn.ImageSize = new System.Drawing.Size(30, 30);
+            this.ocrbtn.Location = new System.Drawing.Point(9, 576);
+            this.ocrbtn.Name = "ocrbtn";
+            this.ocrbtn.ShadowDecoration.Parent = this.ocrbtn;
+            this.ocrbtn.Size = new System.Drawing.Size(251, 45);
+            this.ocrbtn.TabIndex = 11;
+            this.ocrbtn.Text = "OCR ";
+            this.ocrbtn.Click += new System.EventHandler(this.ocrbtn_Click);
+            // 
             // btnSellMed
             // 
             this.btnSellMed.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
@@ -86,9 +109,9 @@
             this.btnSellMed.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnSellMed.ForeColor = System.Drawing.Color.White;
             this.btnSellMed.HoverState.Parent = this.btnSellMed;
-            this.btnSellMed.Image = ((System.Drawing.Image)(resources.GetObject("btnSellMed.Image")));
+            this.btnSellMed.Image = global::Test.Properties.Resources.sellMedicine_64px;
             this.btnSellMed.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSellMed.Location = new System.Drawing.Point(9, 538);
+            this.btnSellMed.Location = new System.Drawing.Point(6, 512);
             this.btnSellMed.Name = "btnSellMed";
             this.btnSellMed.ShadowDecoration.Parent = this.btnSellMed;
             this.btnSellMed.Size = new System.Drawing.Size(251, 45);
@@ -117,9 +140,9 @@
             this.btnProfile.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnProfile.ForeColor = System.Drawing.Color.White;
             this.btnProfile.HoverState.Parent = this.btnProfile;
-            this.btnProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnProfile.Image")));
+            this.btnProfile.Image = global::Test.Properties.Resources.modifyMedicine_32px;
             this.btnProfile.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnProfile.Location = new System.Drawing.Point(9, 461);
+            this.btnProfile.Location = new System.Drawing.Point(9, 450);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.ShadowDecoration.Parent = this.btnProfile;
             this.btnProfile.Size = new System.Drawing.Size(251, 45);
@@ -144,7 +167,7 @@
             this.btnViewMedicine.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnViewMedicine.ForeColor = System.Drawing.Color.White;
             this.btnViewMedicine.HoverState.Parent = this.btnViewMedicine;
-            this.btnViewMedicine.Image = ((System.Drawing.Image)(resources.GetObject("btnViewMedicine.Image")));
+            this.btnViewMedicine.Image = global::Test.Properties.Resources.view_64px;
             this.btnViewMedicine.ImageSize = new System.Drawing.Size(30, 30);
             this.btnViewMedicine.Location = new System.Drawing.Point(9, 387);
             this.btnViewMedicine.Name = "btnViewMedicine";
@@ -167,7 +190,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::Test.Properties.Resources.pharmacy_100px;
             this.pictureBox1.Location = new System.Drawing.Point(48, 18);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(183, 175);
@@ -185,7 +208,7 @@
             this.btnAddMed.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnAddMed.ForeColor = System.Drawing.Color.White;
             this.btnAddMed.HoverState.Parent = this.btnAddMed;
-            this.btnAddMed.Image = ((System.Drawing.Image)(resources.GetObject("btnAddMed.Image")));
+            this.btnAddMed.Image = global::Test.Properties.Resources.addMedic_48px;
             this.btnAddMed.ImageSize = new System.Drawing.Size(30, 30);
             this.btnAddMed.Location = new System.Drawing.Point(9, 319);
             this.btnAddMed.Name = "btnAddMed";
@@ -205,7 +228,7 @@
             this.btnDashboard.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnDashboard.ForeColor = System.Drawing.Color.White;
             this.btnDashboard.HoverState.Parent = this.btnDashboard;
-            this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
+            this.btnDashboard.Image = global::Test.Properties.Resources.dashbord;
             this.btnDashboard.ImageSize = new System.Drawing.Size(30, 30);
             this.btnDashboard.Location = new System.Drawing.Point(9, 251);
             this.btnDashboard.Name = "btnDashboard";
@@ -225,9 +248,9 @@
             this.btnlogout.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnlogout.ForeColor = System.Drawing.Color.White;
             this.btnlogout.HoverState.Parent = this.btnlogout;
-            this.btnlogout.Image = ((System.Drawing.Image)(resources.GetObject("btnlogout.Image")));
+            this.btnlogout.Image = global::Test.Properties.Resources.logout;
             this.btnlogout.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnlogout.Location = new System.Drawing.Point(9, 629);
+            this.btnlogout.Location = new System.Drawing.Point(9, 640);
             this.btnlogout.Name = "btnlogout";
             this.btnlogout.ShadowDecoration.Parent = this.btnlogout;
             this.btnlogout.Size = new System.Drawing.Size(251, 45);
@@ -237,6 +260,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.uC_p_OCR1);
             this.panel3.Controls.Add(this.uC_P_SellMed1);
             this.panel3.Controls.Add(this.uC_P_UpdateMedicine1);
             this.panel3.Controls.Add(this.uC_P_viewMedicine1);
@@ -247,25 +271,13 @@
             this.panel3.Size = new System.Drawing.Size(1110, 777);
             this.panel3.TabIndex = 2;
             // 
-            // gunaElipse1
+            // uC_p_OCR1
             // 
-            this.gunaElipse1.TargetControl = this.panel3;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.TargetControl = this.panel3;
-            // 
-            // guna2Elipse2
-            // 
-            this.guna2Elipse2.TargetControl = this.panel3;
-            // 
-            // guna2Elipse3
-            // 
-            this.guna2Elipse3.TargetControl = this.panel3;
-            // 
-            // guna2Elipse4
-            // 
-            this.guna2Elipse4.TargetControl = this.panel3;
+            this.uC_p_OCR1.BackColor = System.Drawing.Color.White;
+            this.uC_p_OCR1.Location = new System.Drawing.Point(-3, -3);
+            this.uC_p_OCR1.Name = "uC_p_OCR1";
+            this.uC_p_OCR1.Size = new System.Drawing.Size(1110, 777);
+            this.uC_p_OCR1.TabIndex = 5;
             // 
             // uC_P_SellMed1
             // 
@@ -307,6 +319,30 @@
             this.uc_p_Dashbord1.Name = "uc_p_Dashbord1";
             this.uc_p_Dashbord1.Size = new System.Drawing.Size(1110, 777);
             this.uc_p_Dashbord1.TabIndex = 0;
+            // 
+            // gunaElipse1
+            // 
+            this.gunaElipse1.TargetControl = this.panel3;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.TargetControl = this.panel3;
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.TargetControl = this.panel3;
+            // 
+            // guna2Elipse3
+            // 
+            this.guna2Elipse3.TargetControl = this.panel3;
+            // 
+            // guna2Elipse4
+            // 
+            this.guna2Elipse4.TargetControl = this.panel3;
+            // 
+            // guna2Elipse5
+            // 
+            this.guna2Elipse5.TargetControl = this.panel3;
             // 
             // Pharmacist
             // 
@@ -352,5 +388,8 @@
         private PharmacistUC.UC_P_UpdateMedicine uC_P_UpdateMedicine1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
         private PharmacistUC.UC_P_SellMed uC_P_SellMed1;
+        private Guna.UI2.WinForms.Guna2Button ocrbtn;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse5;
+        private PharmacistUC.UC_p_OCR uC_p_OCR1;
     }
 }

@@ -73,21 +73,54 @@ namespace Test.PharmacistUC
         {
             ClearAll();
         }
+        private Int64 validitor()
+        {
+            try
+            {
+                Int64 quantity = Int64.Parse(txtAvalquantity.Text);
+                Int64 addQuantity = Int64.Parse(txtaddQuan.Text);
+                Int64 priceunit = Int64.Parse(txtperUnit.Text);
+                TotalQuantaity = quantity + addQuantity;
+                return TotalQuantaity;
+
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("enter only numbers", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return TotalQuantaity;
+            }
+        }
+
 
         private void ptnUpdate_Click(object sender, EventArgs e)
         {
-            String mname = txtmedName.Text;
-            String mnumber = txtmedNum.Text;
-            String mdate = txtmanDate.Text;
-            String edate = txtExpierdate.Text;
-            Int64 quantity = Int64.Parse(txtAvalquantity.Text);
-            Int64 addQuantity = Int64.Parse(txtaddQuan.Text);
-            Int64 priceunit = Int64.Parse(txtperUnit.Text);
-            TotalQuantaity = quantity + addQuantity;
+            try
+            {
+                if (txtAvalquantity.Text != "" && txtExpierdate.Text != "" && txtmedID.Text != "" && txtmanDate.Text != "" && txtmedNum.Text != "" && txtperUnit.Text != "")
+                {
+                    String mname = txtmedName.Text;
+                    String mnumber = txtmedNum.Text;
+                    String mdate = txtmanDate.Text;
+                    String edate = txtExpierdate.Text;
+                    Int64 quantity = Int64.Parse(txtAvalquantity.Text);
+                    Int64 addQuantity = Int64.Parse(txtaddQuan.Text);
+                    Int64 priceunit = Int64.Parse(txtperUnit.Text);
+                    TotalQuantaity = quantity + addQuantity;
 
-            //mid,mname,mnumber,mDate,eDate,quantity,perUnit
-            query = "update medic set mname = '"+mname+"',mnumber='"+mnumber+"',mDate='"+mdate+"',eDate='"+edate+"',quantity="+TotalQuantaity+",perUnit="+priceunit+"where mid='"+txtmedID.Text+"'";
-            fn.SetData(query, "Update sucsesfully");
+
+                    //mid,mname,mnumber,mDate,eDate,quantity,perUnit
+                    query = "update medic set mname = '" + mname + "',mnumber='" + mnumber + "',mDate='" + mdate + "',eDate='" + edate + "',quantity=" + TotalQuantaity + ",perUnit=" + priceunit + "where mid='" + txtmedID.Text + "'";
+                    fn.SetData(query, "Update sucsesfully");
+                }
+                else
+                {
+                    MessageBox.Show("Enter all data", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Enter numbers data", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

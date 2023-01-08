@@ -1208,24 +1208,4 @@
         4AI+4ARe4AZ+4Aie4KeTAAA7
 </value>
   </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>1- Add User
-2- View User
-3- Profile Management
-
-- Admin is the role with the
- highest level of access
-
-- Admins can add content and access 
-all items in the Admin Toolbar
-
-- This means that Admins can control
- settingslike the design, etc. 
- 
-- They can add and delete other 
-admin users. and can approve or deny 
-edits made by user.
-
-</value>
-  </data>
 </root>
